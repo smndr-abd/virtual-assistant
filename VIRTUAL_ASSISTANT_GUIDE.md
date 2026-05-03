@@ -1,6 +1,6 @@
 # Virtual Personal Assistant
 
-## 📋 Table of Contents
+## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Architecture & Components](#architecture--components)
 3. [Step-by-Step Explanation](#step-by-step-explanation)
