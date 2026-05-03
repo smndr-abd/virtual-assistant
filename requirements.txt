@@ -1,0 +1,9 @@
+SpeechRecognition>=3.8.1
+pyttsx3>=2.90
+PyAudio>=0.2.11
+scikit-learn>=1.0.0
+numpy>=1.21.0
+
+# Optional for enhanced features
+requests>=2.26.0
+pytz>=2021.3
