@@ -1,5 +1,7 @@
 # Virtual Personal Assistant - Quick Start
 
+## Done by Samandar Abdujabbar
+
 ## Project Overview
 
 A complete **Virtual Personal Assistant** powered by Machine Learning that can:
