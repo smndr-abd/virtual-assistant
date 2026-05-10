@@ -1,6 +1,6 @@
 # Virtual Personal Assistant - Quick Start
 
-## Done by Samandar Abdujabbar
+## Done by Samandar Abdujabbar(Abudjabbarov)
 
 ## Project Overview
 
