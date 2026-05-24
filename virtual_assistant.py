@@ -15,6 +15,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 import numpy as np
 import warnings
+from datetime import datetime
 warnings.filterwarnings('ignore')
 
 
@@ -70,7 +71,7 @@ class VirtualAssistant:
         
         print("\n✓ Virtual Assistant initialized successfully!")
         self.speak(f"Hello! I am {self.name}. How can I help you today?")
-    
+
     def train_intent_classifier(self):
         """
         Step 2: Train Machine Learning Model for Intent Classification
@@ -198,7 +199,7 @@ class VirtualAssistant:
             ("save a note", "note"),
             ("create a new text note", "note"),
             ("add this to my notes", "note"),
-            ("jot this information down", "note")
+            ("jot this information down", "note"),
             
             # REMINDER related
             ("set a reminder", "reminder"),
@@ -678,6 +679,37 @@ def interactive_mode():
     else:
         print("Invalid choice. Starting text mode...")
         assistant.run_text_mode()
+
+class VirtualAssistant:
+    def __init__(self):
+        self.session_log = []  # ADD THIS
+
+    def log_command(self, command, intent, confidence, success):
+        entry = {
+            "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "command": command,
+            "intent": intent,
+            "confidence": round(confidence * 100, 1),
+            "success": success
+        }
+        self.session_log.append(entry)
+        
+        # Save to file
+        with open("session_log.json", "a") as f:
+            f.write(json.dumps(entry) + "\n")
+    
+    def show_session_summary(self):
+        total = len(self.session_log)
+        avg_conf = sum(x["confidence"] for x in self.session_log) / total
+        
+        print(f"\n=== SESSION SUMMARY ===")
+        print(f"Total commands: {total}")
+        print(f"Average confidence: {avg_conf:.1f}%")
+        
+        # Most used intents
+        from collections import Counter
+        intents = Counter(x["intent"] for x in self.session_log)
+        print(f"Most used: {intents.most_common(3)}")
 
 
 if __name__ == "__main__":

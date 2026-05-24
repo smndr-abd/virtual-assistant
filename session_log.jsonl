@@ -1,0 +1,8 @@
+{"time": "2026-05-25 00:18:31", "command": "hello", "intent": "greeting", "confidence": 52.1}
+{"time": "2026-05-25 00:18:39", "command": "what time is it", "intent": "time", "confidence": 69.5}
+{"time": "2026-05-25 00:18:45", "command": "calculate 25 plus 17", "intent": "calculate", "confidence": 48.0}
+{"time": "2026-05-25 00:18:48", "command": "report defect on line 3", "intent": "report_defect", "confidence": 74.0}
+{"time": "2026-05-25 00:18:52", "command": "check status of line 2", "intent": "check_status", "confidence": 63.7}
+{"time": "2026-05-25 00:18:54", "command": "request maintenance for machine 7", "intent": "maintenance", "confidence": 61.5}
+{"time": "2026-05-25 00:18:55", "command": "tell me a joke", "intent": "joke", "confidence": 55.4}
+{"time": "2026-05-25 00:19:00", "command": "goodbye", "intent": "farewell", "confidence": 51.4}
