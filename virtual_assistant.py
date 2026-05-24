@@ -93,13 +93,29 @@ class VirtualAssistant:
             ("what time is it", "time"),
             ("tell me the time", "time"),
             ("current time please", "time"),
-            ("what's the time", "time"),
+            ("what's the time right now", "time"),
+            ("could you tell me the time", "time"),
+            ("time please", "time"),
+            ("show me the current time", "time"),
+            ("I need to know the time", "time"),
+            ("what hour is it", "time"),
+            ("tell me what time it is now", "time"),
+            ("do you have the time", "time"),
+            ("what's the time in local zone", "time"),
+            ("check the clock", "time"),
             
             # DATE related
             ("what's the date today", "date"),
             ("tell me today's date", "date"),
             ("what day is it", "date"),
             ("current date", "date"),
+            ("date please", "date"),
+            ("show me the date", "date"),
+            ("I need to know the date", "date"),
+            ("tell me what date it is now", "date"),
+            ("what is today's full date", "date"), 
+            ("which day of the week is it", "date"), 
+            ("give me the calendar date", "date"),
             
             # WEB SEARCH related
             ("search for machine learning", "search"),
@@ -107,18 +123,27 @@ class VirtualAssistant:
             ("look up artificial intelligence", "search"),
             ("find information about deep learning", "search"),
             ("search neural networks", "search"),
+            ("search the web for quantum computing", "search"),
+            ("look up the recipe for lasagna", "search"),
+            ("find history of the eiffel tower", "search"),
             
             # OPEN APPLICATION related
             ("open browser", "open_app"),
             ("launch notepad", "open_app"),
             ("start calculator", "open_app"),
             ("open youtube", "open_app"),
+            ("open terminal", "open_app"),
+            ("launch spotify", "open_app"),
+            ("start settings application", "open_app"),
             
             # WEATHER related
             ("what's the weather", "weather"),
             ("weather forecast", "weather"),
             ("how's the weather today", "weather"),
             ("is it going to rain", "weather"),
+            ("what is the temperature outside", "weather"),
+            ("will it be sunny tomorrow", "weather"),
+            ("check the wind speed", "weather"),
             
             # GREETING related
             ("hello", "greeting"),
@@ -126,6 +151,9 @@ class VirtualAssistant:
             ("hey", "greeting"),
             ("good morning", "greeting"),
             ("good evening", "greeting"),
+            ("greetings", "greeting"),
+            ("howdy", "greeting"),
+            ("whats up", "greeting"),
             
             # FAREWELL related
             ("goodbye", "farewell"),
@@ -133,34 +161,52 @@ class VirtualAssistant:
             ("see you later", "farewell"),
             ("exit", "farewell"),
             ("quit", "farewell"),
+            ("talk to you later", "farewell"),
+            ("have a good day", "farewell"),
+            ("i am leaving now", "farewell"),
             
             # HELP related
             ("help me", "help"),
             ("what can you do", "help"),
             ("show me commands", "help"),
             ("assistance needed", "help"),
+            ("i need some guidance", "help"),
+            ("can you support me with this", "help"),
+            ("list out your features", "help"),
             
             # JOKE related
             ("tell me a joke", "joke"),
             ("make me laugh", "joke"),
             ("say something funny", "joke"),
+            ("do you know any puns", "joke"),
+            ("crack a joke", "joke"),
+            ("tell me something hilarious", "joke"),
             
             # CALCULATION related
             ("calculate 5 plus 3", "calculate"),
             ("what is 10 times 2", "calculate"),
             ("compute 100 divided by 5", "calculate"),
             ("solve 7 minus 3", "calculate"),
+            ("what is the square root of 64", "calculate"),
+            ("multiply 45 by 12", "calculate"),
+            ("what is 15 percent of 200", "calculate"),
             
             # NOTE related
             ("take a note", "note"),
             ("remember this", "note"),
             ("write this down", "note"),
             ("save a note", "note"),
+            ("create a new text note", "note"),
+            ("add this to my notes", "note"),
+            ("jot this information down", "note")
             
             # REMINDER related
             ("set a reminder", "reminder"),
             ("remind me to", "reminder"),
             ("create reminder", "reminder"),
+            ("alert me to buy milk later", "reminder"),
+            ("schedule a notification for my meeting", "reminder"),
+            ("remind me in ten minutes", "reminder"),
         ]
         
         # Separate commands and intents
