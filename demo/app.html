@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VPA — Virtual Personal Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ░░ CURSOR ░░ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- ░░ NAV ░░ -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">VPA<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#demo">Demo</a></li>
+      <li><a href="#results">Results</a></li>
+    </ul>
+    <a href="#demo" class="nav-cta">Try Demo</a>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ░░ HERO ░░ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow glow-1"></div>
+      <div class="hero-glow glow-2"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Machine Learning Project
+      </div>
+      <h1 class="hero-title">
+        <span class="line line-1">Virtual</span>
+        <span class="line line-2">Personal</span>
+        <span class="line line-3 accent-line">Assistant</span>
+      </h1>
+      <p class="hero-sub">
+        An AI-powered voice assistant that <strong>listens</strong>, 
+        <strong>understands</strong>, and <strong>acts</strong> — 
+        built with Python, TF-IDF &amp; Naive Bayes.
+      </p>
+      <div class="hero-ctas">
+        <a href="#demo" class="btn btn-primary">
+          <span>Try the Demo</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#how" class="btn btn-ghost">How it works</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-target="91">0</span><span class="stat-unit">%</span>
+          <span class="stat-label">ML Accuracy</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="9">0</span>
+          <span class="stat-label">Features</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span>&lt;</span><span class="stat-num" data-target="1">0</span><span class="stat-unit">s</span>
+          <span class="stat-label">Response</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <div class="chat-header">
+            <div class="avatar-ring">
+              <div class="avatar-dot"></div>
+            </div>
+            <div>
+              <div class="chat-name">Assistant</div>
+              <div class="chat-status">
+                <span class="online-dot"></span> Online
+              </div>
+            </div>
+          </div>
+          <div class="chat-messages" id="heroChat">
+            <div class="msg msg-bot">
+              Hello! How can I help you today?
+            </div>
+            <div class="msg msg-user">What time is it?</div>
+            <div class="msg msg-bot typing" id="typingMsg">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="chat-input-bar">
+            <div class="chat-input-field">Type a message…</div>
+            <button class="mic-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a3 3 0 0 1 3 3v7a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3M8 22h8"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ░░ ABOUT ░░ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-tag">About the Project</div>
+      <h2 class="section-title">What is a<br /><em>Virtual Assistant?</em></h2>
+      <p class="section-desc">
+        An AI-powered software that understands natural language, classifies 
+        intent using machine learning, and executes tasks automatically — 
+        all in under one second.
+      </p>
+
+      <div class="pillars">
+        <div class="pillar" data-color="blue">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2a3 3 0 0 1 3 3v7a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"/>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3M8 22h8"/>
+            </svg>
+          </div>
+          <div class="pillar-num">01</div>
+          <h3>Listen</h3>
+          <p>Microphone captures audio, Google Speech API converts it to text instantly.</p>
+        </div>
+        <div class="pillar" data-color="gold">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+            </svg>
+          </div>
+          <div class="pillar-num">02</div>
+          <h3>Understand</h3>
+          <p>TF-IDF + Naive Bayes ML model classifies intent with confidence score.</p>
+        </div>
+        <div class="pillar" data-color="green">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <div class="pillar-num">03</div>
+          <h3>Execute</h3>
+          <p>9 task handlers run the correct action — search, calculate, report, and more.</p>
+        </div>
+        <div class="pillar" data-color="purple">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div class="pillar-num">04</div>
+          <h3>Respond</h3>
+          <p>Text-to-Speech converts the result back to voice output through speakers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ HOW IT WORKS ░░ -->
+  <section class="how section" id="how">
+    <div class="container">
+      <div class="section-tag">Architecture</div>
+      <h2 class="section-title">7-Step<br /><em>Pipeline</em></h2>
+
+      <div class="pipeline">
+        <div class="pipeline-line"></div>
+        <div class="pipeline-steps">
+
+          <div class="pipe-step" data-step="1">
+            <div class="pipe-dot"></div>
+            <div class="pipe-card">
+              <span class="pipe-num">01</span>
+              <h4>Voice Input</h4>
+              <p>Microphone captures audio waves from the user</p>
+            </div>
+          </div>
+
+          <div class="pipe-step right" data-step="2">
+            <div class="pipe-dot"></div>
+            <div class="pipe-card">
+              <span class="pipe-num">02</span>
+              <h4>Speech Recognition</h4>
+              <p>Google API converts audio → text string</p>
+            </div>
+          </div>
+
+          <div class="pipe-step" data-step="3">
+            <div class="pipe-dot"></div>
+            <div class="pipe-card">
+              <span class="pipe-num">03</span>
+              <h4>Text Processing</h4>
+              <p>Clean, lowercase, normalize the text</p>
+            </div>
+          </div>
+
+          <div class="pipe-step right highlight-step" data-step="4">
+            <div class="pipe-dot pulse"></div>
+            <div class="pipe-card featured-card">
+              <span class="pipe-num">04</span>
+              <span class="featured-badge">AI Core ★</span>
+              <h4>ML Classification</h4>
+              <p>TF-IDF vectorizes text → Naive Bayes predicts intent with confidence</p>
+            </div>
+          </div>
+
+          <div class="pipe-step" data-step="5">
+            <div class="pipe-dot"></div>
+            <div class="pipe-card">
+              <span class="pipe-num">05</span>
+              <h4>Task Routing</h4>
+              <p>Routes to the correct handler function</p>
+            </div>
+          </div>
+
+          <div class="pipe-step right" data-step="6">
+            <div class="pipe-dot"></div>
+            <div class="pipe-card">
+              <span class="pipe-num">06</span>
+              <h4>Task Execution</h4>
+              <p>Performs the action — search, calculate, log</p>
+            </div>
+          </div>
+
+          <div class="pipe-step" data-step="7">
+            <div class="pipe-dot"></div>
+            <div class="pipe-card">
+              <span class="pipe-num">07</span>
+              <h4>Voice Response</h4>
+              <p>Text-to-Speech speaks the answer back</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FEATURES ░░ -->
+  <section class="features section" id="features">
+    <div class="container">
+      <div class="section-tag">Capabilities</div>
+      <h2 class="section-title">9 Built-in<br /><em>Features</em></h2>
+
+      <div class="features-grid">
+        <div class="feat-card feat-large">
+          <div class="feat-icon">⏰</div>
+          <h3>Time &amp; Date</h3>
+          <p>Instantly tell the current time and date in natural speech.</p>
+          <div class="feat-example">"What time is it?"</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🔍</div>
+          <h3>Web Search</h3>
+          <p>Opens Google with your query automatically.</p>
+          <div class="feat-example">"Search for Python"</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🧮</div>
+          <h3>Calculator</h3>
+          <p>Perform math by voice — no typing needed.</p>
+          <div class="feat-example">"Calculate 15 plus 27"</div>
+        </div>
+        <div class="feat-card feat-factory">
+          <div class="feat-icon">🏭</div>
+          <h3>Defect Report</h3>
+          <p>Log production defects hands-free on the factory floor.</p>
+          <div class="feat-example">"Report defect on line 3"</div>
+        </div>
+        <div class="feat-card feat-factory">
+          <div class="feat-icon">📊</div>
+          <h3>Status Check</h3>
+          <p>Query production counts and line status by voice.</p>
+          <div class="feat-example">"Check status of line 2"</div>
+        </div>
+        <div class="feat-card feat-factory">
+          <div class="feat-icon">🔧</div>
+          <h3>Maintenance</h3>
+          <p>Submit maintenance tickets instantly via voice command.</p>
+          <div class="feat-example">"Maintenance for machine 7"</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">📝</div>
+          <h3>Notes</h3>
+          <p>Save voice notes to file with auto-timestamp.</p>
+          <div class="feat-example">"Take a note"</div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🌤️</div>
+          <h3>Weather</h3>
+          <p>Real-time weather via OpenWeatherMap API.</p>
+          <div class="feat-example">"Weather in Seoul"</div>
+        </div>
+        <div class="feat-card feat-large-right">
+          <div class="feat-icon">✉️</div>
+          <h3>Email Alerts</h3>
+          <p>Send automated email alerts to supervisors instantly.</p>
+          <div class="feat-example">"Send email to manager"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ DEMO ░░ -->
+  <section class="demo-section section" id="demo">
+    <div class="container">
+      <div class="section-tag">Interactive Demo</div>
+      <h2 class="section-title">Try it<br /><em>Yourself</em></h2>
+      <p class="section-desc">Type any command below. The ML model will classify your intent in real time.</p>
+
+      <div class="demo-wrapper">
+        <div class="demo-chat" id="demoChat">
+          <div class="demo-msg bot-msg">
+            <div class="bot-avatar">AI</div>
+            <div class="msg-bubble">Hello! I'm your Virtual Assistant. Type a command below — I'll classify the intent and respond!</div>
+          </div>
+        </div>
+
+        <div class="demo-suggestions">
+          <span class="sugg-label">Try:</span>
+          <button class="sugg" data-msg="What time is it?">What time is it?</button>
+          <button class="sugg" data-msg="Report defect on line 3">Report defect on line 3</button>
+          <button class="sugg" data-msg="Calculate 50 plus 30">Calculate 50 plus 30</button>
+          <button class="sugg" data-msg="Tell me a joke">Tell me a joke</button>
+          <button class="sugg" data-msg="Check status of line 2">Check status of line 2</button>
+          <button class="sugg" data-msg="Search for machine learning">Search for machine learning</button>
+        </div>
+
+        <div class="demo-input-row">
+          <input
+            type="text"
+            class="demo-input"
+            id="demoInput"
+            placeholder="Type your command here…"
+            autocomplete="off"
+          />
+          <button class="demo-send" id="demoSend">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ ML EXPLAINER ░░ -->
+  <section class="ml-section section" id="ml">
+    <div class="container">
+      <div class="section-tag">Under the Hood</div>
+      <h2 class="section-title">How the<br /><em>ML Works</em></h2>
+
+      <div class="ml-grid">
+        <div class="ml-card">
+          <div class="ml-num">01</div>
+          <h3>TF-IDF</h3>
+          <p>Converts text into 500 numerical features. Rare, important words score high. Common words like "the" score low.</p>
+          <div class="ml-visual tfidf-visual">
+            <div class="tfidf-row">
+              <span class="tfidf-word">"search"</span>
+              <div class="tfidf-bar" style="--w:85%"></div>
+              <span class="tfidf-score">0.85</span>
+            </div>
+            <div class="tfidf-row">
+              <span class="tfidf-word">"machine"</span>
+              <div class="tfidf-bar" style="--w:72%"></div>
+              <span class="tfidf-score">0.72</span>
+            </div>
+            <div class="tfidf-row">
+              <span class="tfidf-word">"for"</span>
+              <div class="tfidf-bar" style="--w:10%"></div>
+              <span class="tfidf-score">0.10</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ml-card ml-card-center">
+          <div class="ml-num">02</div>
+          <h3>Naive Bayes</h3>
+          <p>Calculates probability for every intent. Picks the highest. Gives confidence score.</p>
+          <div class="ml-visual prob-visual">
+            <div class="prob-row">
+              <span class="prob-label">TIME</span>
+              <div class="prob-bar-wrap">
+                <div class="prob-bar" style="--w:95%;--c:#F0A500"></div>
+              </div>
+              <span class="prob-pct gold">95%</span>
+            </div>
+            <div class="prob-row">
+              <span class="prob-label">SEARCH</span>
+              <div class="prob-bar-wrap">
+                <div class="prob-bar" style="--w:2%;--c:#64748B"></div>
+              </div>
+              <span class="prob-pct muted">2%</span>
+            </div>
+            <div class="prob-row">
+              <span class="prob-label">CALC</span>
+              <div class="prob-bar-wrap">
+                <div class="prob-bar" style="--w:1%;--c:#64748B"></div>
+              </div>
+              <span class="prob-pct muted">1%</span>
+            </div>
+            <div class="prob-result">→ Prediction: TIME ✓</div>
+          </div>
+        </div>
+
+        <div class="ml-card">
+          <div class="ml-num">03</div>
+          <h3>Results</h3>
+          <p>5 algorithms tested. Logistic Regression best accuracy. Naive Bayes best speed.</p>
+          <div class="ml-visual algo-visual">
+            <div class="algo-row">
+              <span class="algo-name">Logistic Reg</span>
+              <div class="algo-bar" style="--w:93%;--c:#2D6A9F"></div>
+              <span class="algo-pct">93%</span>
+            </div>
+            <div class="algo-row">
+              <span class="algo-name">SVM</span>
+              <div class="algo-bar" style="--w:92%;--c:#2D6A9F"></div>
+              <span class="algo-pct">92%</span>
+            </div>
+            <div class="algo-row highlight-row">
+              <span class="algo-name">Naive Bayes ★</span>
+              <div class="algo-bar" style="--w:91%;--c:#F0A500"></div>
+              <span class="algo-pct gold">91%</span>
+            </div>
+            <div class="algo-row">
+              <span class="algo-name">Rand. Forest</span>
+              <div class="algo-bar" style="--w:89%;--c:#64748B"></div>
+              <span class="algo-pct muted">89%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ RESULTS ░░ -->
+  <section class="results section" id="results">
+    <div class="container">
+      <div class="section-tag">Performance</div>
+      <h2 class="section-title">The<br /><em>Numbers</em></h2>
+
+      <div class="metrics-grid">
+        <div class="metric-card m-blue">
+          <div class="metric-val counter" data-target="100">0</div>
+          <div class="metric-unit">%</div>
+          <div class="metric-label">Training Accuracy</div>
+        </div>
+        <div class="metric-card m-gold">
+          <div class="metric-val counter" data-target="91">0</div>
+          <div class="metric-unit">%</div>
+          <div class="metric-label">Cross-Val Accuracy</div>
+        </div>
+        <div class="metric-card m-green">
+          <div class="metric-val">&lt;1</div>
+          <div class="metric-unit">s</div>
+          <div class="metric-label">Response Time</div>
+        </div>
+        <div class="metric-card m-purple">
+          <div class="metric-val counter" data-target="93">0</div>
+          <div class="metric-unit"></div>
+          <div class="metric-label">Training Examples</div>
+        </div>
+      </div>
+
+      <div class="speed-breakdown">
+        <h3>Response Time Breakdown</h3>
+        <div class="speed-bars">
+          <div class="speed-item">
+            <span class="speed-label">Speech Recognition</span>
+            <div class="speed-track">
+              <div class="speed-fill" style="--w:50%;--c:#2D6A9F" data-w="50%"></div>
+            </div>
+            <span class="speed-time">0.4s</span>
+          </div>
+          <div class="speed-item">
+            <span class="speed-label">ML Classification</span>
+            <div class="speed-track">
+              <div class="speed-fill" style="--w:0.1%;--c:#F0A500" data-w="0.1%"></div>
+            </div>
+            <span class="speed-time">0.001s</span>
+          </div>
+          <div class="speed-item">
+            <span class="speed-label">Task Execution</span>
+            <div class="speed-track">
+              <div class="speed-fill" style="--w:37%;--c:#1A7A4A" data-w="37%"></div>
+            </div>
+            <span class="speed-time">0.3s</span>
+          </div>
+          <div class="speed-item">
+            <span class="speed-label">Text-to-Speech</span>
+            <div class="speed-track">
+              <div class="speed-fill" style="--w:12%;--c:#7A3A8A" data-w="12%"></div>
+            </div>
+            <span class="speed-time">0.1s</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          VPA<span class="dot">.</span>
+          <p>Virtual Personal Assistant<br />with Machine Learning</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#how">Architecture</a>
+          <a href="#features">Features</a>
+          <a href="#demo">Demo</a>
+          <a href="#results">Results</a>
+        </div>
+        <div class="footer-tech">
+          <div class="tech-tag">Python</div>
+          <div class="tech-tag">scikit-learn</div>
+          <div class="tech-tag">TF-IDF</div>
+          <div class="tech-tag">Naive Bayes</div>
+          <div class="tech-tag">Speech API</div>
+          <div class="tech-tag">SQLite</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Built with Machine Learning &amp; Python</span>
+        <span>Interview Project — Ajin Industry Co., Ltd.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
